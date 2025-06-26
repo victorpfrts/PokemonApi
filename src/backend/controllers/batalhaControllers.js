@@ -6,8 +6,6 @@ const batalha = async (pokemonA, pokemonB) => {
     const winnerProb = (Number(pokemonA.nivel)/(Number(pokemonA.nivel)+Number(pokemonB.nivel))) * 100
     let vencedor = null
     let perdedor = null
-    console.log('random', random)
-    console.log('winnerProb', winnerProb)
     if(winnerProb > random){
       pokemonA.nivel += 1
       pokemonB.nivel -= 1
@@ -28,6 +26,43 @@ const batalha = async (pokemonA, pokemonB) => {
   
 }
 
+/**
+ * @swagger
+ * /batalhar/{pokemonAId}/{pokemonBId}:
+ *   post:
+ *     tags:
+ *       - Batalha
+ *     summary: Realiza uma batalha entre dois pokémons pelo ID
+ *     parameters:
+ *       - in: path
+ *         name: pokemonAId
+ *         required: true
+ *         schema:
+ *           type: integer
+ *         description: ID do primeiro pokémon (A)
+ *       - in: path
+ *         name: pokemonBId
+ *         required: true
+ *         schema:
+ *           type: integer
+ *         description: ID do segundo pokémon (B)
+ *     responses:
+ *       200:
+ *         description: Resultado da batalha com vencedor e perdedor
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 vencedor:
+ *                   type: object
+ *                 perdedor:
+ *                   type: object
+ *       404:
+ *         description: Pokémon não encontrado
+ *       500:
+ *         description: Erro interno no servidor
+ */
 exports.postBatalha = async (req, res) => {
   try{
     const { pokemonAId, pokemonBId } = req.params

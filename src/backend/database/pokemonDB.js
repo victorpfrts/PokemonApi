@@ -1,4 +1,4 @@
-const { queryDB } = require('../database/db')
+const { queryDB } = require('./db')
 
 exports.selectPokemons = async () => {
   const response = await queryDB('SELECT id, treinador, tipo, nivel FROM pokemon WHERE situacao=true AND nivel >0 ORDER BY id')
