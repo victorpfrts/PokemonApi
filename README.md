@@ -90,9 +90,6 @@ $ make local
 
 <h3>🔹 GET /pokemons/:id</h3>
 <p>Retorna os dados de um pokemon.</p>
-<ul>
-  <li><strong>Query Params:</strong> <code>id</code> (int, obrigatório): ID do cliente</li>
-</ul>
 <p><strong>Resposta: </strong></p>
 <h4>Status: 200 - Ok</h4>
 <pre><code>{
