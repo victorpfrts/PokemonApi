@@ -16,8 +16,7 @@ export default function App() {
     fetch('http://localhost:3000/pokemons')
       .then(res => res.json())
       .then(data => {
-        const ordenados = data.sort((a, b) => {
-          // Ordena primeiro por treinador, depois por tipo
+          const ordenados = data.sort((a, b) => {
           const nomeTreinadorA = (a.treinador || '').toLowerCase()
           const nomeTreinadorB = (b.treinador || '').toLowerCase()
           if (nomeTreinadorA < nomeTreinadorB) return
