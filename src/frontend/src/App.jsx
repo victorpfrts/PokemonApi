@@ -20,8 +20,8 @@ export default function App() {
           // Ordena primeiro por treinador, depois por tipo
           const nomeTreinadorA = (a.treinador || '').toLowerCase()
           const nomeTreinadorB = (b.treinador || '').toLowerCase()
-          if (nomeTreinadorA < nomeTreinadorB) return -1
-          if (nomeTreinadorA > nomeTreinadorB) return 1
+          if (nomeTreinadorA < nomeTreinadorB) return
+          if (nomeTreinadorA > nomeTreinadorB) return
   
           const tipoA = (a.tipo || '').toLowerCase()
           const tipoB = (b.tipo || '').toLowerCase()
